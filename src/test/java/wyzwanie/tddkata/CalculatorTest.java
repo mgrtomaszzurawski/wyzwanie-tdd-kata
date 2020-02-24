@@ -34,4 +34,18 @@ public class CalculatorTest {
         assertThat(result, equalTo(4));
     }
 
+    @Test
+    public void should_return_Sum_of_two_value_from_string() {
+        //given
+        Calculator calculatorUnderTest = new Calculator();
+        String stringWithTwoValue= "4,4";
+
+
+        //when
+        Integer result = calculatorUnderTest.add(stringWithTwoValue);
+
+        //then
+        assertThat(result, equalTo(8));
+    }
+
 }
