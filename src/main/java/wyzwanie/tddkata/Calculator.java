@@ -1,12 +1,28 @@
 package wyzwanie.tddkata;
 
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Calculator {
 
     public Integer add(String input) {
 
-        return input.isEmpty() ? 0 : Integer.parseInt(input);
+        if (input.isEmpty()) {
+            return 0;
+        }
+        Integer firstValue = 0;
+        Integer secondValue = 0;
+
+        String[] arguments = input.split(",");
+
+        if (arguments.length >= 1) {
+            firstValue = Integer.parseInt(arguments[0]);
+        }
+        if (arguments.length == 2) {
+            secondValue = Integer.parseInt(arguments[1]);
+        }
+        System.out.println(arguments.length);
+        return firstValue + secondValue;
 
     }
 
